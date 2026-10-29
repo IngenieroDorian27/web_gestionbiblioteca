@@ -1,0 +1,52 @@
+<main>
+  <section>
+    <div class="contenedor-actualizar">
+      <div class="titulo">
+        <h1>Actualizar Libro</h1>
+      </div>
+      <br>
+      <div class="formulario-actualizar">
+        <mat-form-field class="campos-actualizar-width">
+          <mat-label>Libro</mat-label>
+          <input matInput [(ngModel)]="titulo" placeholder="Ingrese Tiutlo" type="text" name="titulo"/>
+          <mat-icon matSuffix fontIcon="person"></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="campos-actualizar-width">
+          <mat-label>Autor</mat-label>
+          <input matInput [(ngModel)]="autor" placeholder="Ingrese Autor" type="text" name="autor"/>
+          <mat-icon matSuffix fontIcon="password"></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="campos-actualizar-width">
+          <mat-label>Categoria</mat-label>
+          <input matInput [(ngModel)]="categoria" placeholder="Ingrese Categoria" type="text" name="categoria"/>
+          <mat-icon matSuffix fontIcon="password"></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="campos-actualizar-width">
+          <mat-label>ISBN</mat-label>
+          <input matInput [(ngModel)]="isbn" placeholder="Ingrese ISBN" type="text" name="isbn"/>
+          <mat-icon matSuffix fontIcon="password"></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="campos-actualizar-width">
+          <mat-label>Estado</mat-label>
+          <mat-select [(ngModel)]="estado">
+            <mat-option value="Disponible">Disponible</mat-option>
+            <mat-option value="Prestado">Prestado</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <br>
+
+        <div class="contenedor-btnactualizar">
+          <button mat-flat-button color="primary" (click)="actualizarLibro()" class="btn-actualizar">
+            Actualizar
+            <mat-icon>update</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

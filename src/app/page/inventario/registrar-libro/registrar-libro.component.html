@@ -1,0 +1,45 @@
+<main>
+  <section>
+    <div class="contenedor-registro">
+      <div class="titulo">
+        <h1>Registro Libros</h1>
+      </div>
+      <br>
+      <div class="formulario-registro">
+        <mat-form-field class="campos-registro-width">
+          <mat-label>Nuevo Libro</mat-label>
+          <input matInput [(ngModel)]="titulo" placeholder="Ingrese Titulo" type="text" name="titulo" />
+          <mat-icon matSuffix fontIcon="book"></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="campos-registro-width">
+          <mat-label>Nuevo Autor</mat-label>
+          <input matInput [(ngModel)]="autor" placeholder="Ingrese Autor" type="text" name="autor" />
+          <mat-icon matSuffix fontIcon="attribution"></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="campos-registro-width">
+          <mat-label>Nueva Categoria</mat-label>
+          <input matInput [(ngModel)]="categoria" placeholder="Ingrese Categoria" type="text" name="categoria" />
+          <mat-icon matSuffix fontIcon="category"></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="campos-registro-width">
+          <mat-label>Nuevo ISBN</mat-label>
+          <input matInput [(ngModel)]="isbn" placeholder="Ingrese ISBN" type="text" name="isbn" />
+          <mat-icon matSuffix fontIcon="code_blocks"></mat-icon>
+        </mat-form-field>
+
+        <br>
+        <br>
+
+        <div class="contenedor-btregistro">
+          <button mat-flat-button (click)="registrarLibro()">
+            Registrar
+            <mat-icon>app_registration</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

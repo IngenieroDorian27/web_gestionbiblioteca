@@ -1,0 +1,89 @@
+<main>
+  <section>
+    <div class="contenedor-imgangular">
+      <div class="img-angular">
+        <img src="angular_gradient.png" width="500" alt="Imagen Angular" class="logo">
+      </div>
+    </div>
+
+    <div class="contenedor-tabla">
+
+      <div class="contenedor-busqueda-btnuevo">
+
+        <div class="contenedor-busqueda">
+
+          <mat-form-field class="campos-busqueda-width">
+            <mat-label>Buscar Usuario</mat-label>
+            <input matInput [(ngModel)]="nombreBuscado" placeholder="Ingrese para Buscar" type="text" />
+            <button mat-icon-button matSuffix (click)="buscarUsuario()" aria-label="Buscar">
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div class="contenedor-btnuevo">
+          <button matFab extended (click)="abrirFormularioRegistro()">
+            Nuevo
+            <mat-icon>add_circle</mat-icon>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="tabla-administrador">
+        <mat-table [dataSource]="datos" class="tabla-admin">
+
+          <!-- Columna ID -->
+          <ng-container matColumnDef="idUser">
+            <mat-header-cell *matHeaderCellDef class="fila">ID</mat-header-cell>
+            <mat-cell *matCellDef="let usuario">{{ usuario.idUser }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Usuario -->
+          <ng-container matColumnDef="usuario">
+            <mat-header-cell *matHeaderCellDef class="fila">Usuario</mat-header-cell>
+            <mat-cell *matCellDef="let usuario">{{ usuario.usuario }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Contraseña -->
+          <ng-container matColumnDef="pasword">
+            <mat-header-cell *matHeaderCellDef class="fila">Contraseña</mat-header-cell>
+            <mat-cell *matCellDef="let usuario">{{ usuario.pasword }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Rol -->
+          <ng-container matColumnDef="rol">
+            <mat-header-cell *matHeaderCellDef class="fila">Rol</mat-header-cell>
+            <mat-cell *matCellDef="let usuario">{{ usuario.rol }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Acciones -->
+          <ng-container matColumnDef="ACCIONES">
+            <mat-header-cell *matHeaderCellDef class="fila">Acciones</mat-header-cell>
+            <mat-cell *matCellDef="let usuario">
+              <button mat-icon-button aria-label="Editar" class="btn-editar" (click)="abrirFormularioActualizar(usuario)"
+                matTooltip="Editar" matTooltipPosition="above">
+                <mat-icon class="icono-editar">edit</mat-icon>
+              </button>
+              <button mat-icon-button aria-label="Eliminar" class="btn-eliminar" matTooltip="Eliminar"
+                matTooltipPosition="above" (click)="eliminarUsuario(usuario.idUser)">
+                <mat-icon class="icono-eliminar">delete_forever</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+
+          <!-- Renderizado de filas -->
+          <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
+        </mat-table>
+      </div>
+    </div>
+
+    <div class="contenedor-btnsalir">
+      <button matFab class="btnsalir" (click)="cerrarSesion()">
+        <mat-icon class="icono-salir">exit_to_app</mat-icon>
+      </button>
+    </div>
+
+  </section>
+</main>

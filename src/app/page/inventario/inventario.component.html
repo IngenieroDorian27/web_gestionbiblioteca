@@ -1,0 +1,101 @@
+<main>
+  <section>
+    <div class="contenedor-imgangular">
+      <div class="img-angular">
+        <img src="angular_inventario.png" width="500" alt="Imagen Angular" class="logo">
+      </div>
+    </div>
+
+    <div class="contenedor-tabla">
+
+      <div class="contenedor-busqueda-btnuevo">
+
+        <div class="contenedor-busqueda">
+
+          <mat-form-field class="campos-busqueda-width">
+            <mat-label>Buscar Libro</mat-label>
+            <input matInput [(ngModel)]="nombreBuscado" placeholder="Ingrese para Buscar" type="text" />
+            <button mat-icon-button matSuffix  aria-label="Buscar" (click)="buscarLibro()">
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div class="contenedor-btnuevo">
+          <button matFab extended (click)="abrirFormularioRegistro()">
+            Nuevo
+            <mat-icon>add_circle</mat-icon>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="tabla-inventario">
+        <mat-table [dataSource]="datos" class="tabla-inv">
+
+          <!-- Columna ID -->
+          <ng-container matColumnDef="idLibro">
+            <mat-header-cell *matHeaderCellDef class="fila">ID</mat-header-cell>
+            <mat-cell *matCellDef="let libro">{{ libro.idLibro }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Titulo -->
+          <ng-container matColumnDef="titulo">
+            <mat-header-cell *matHeaderCellDef class="fila">Titulo</mat-header-cell>
+            <mat-cell *matCellDef="let libro">{{ libro.titulo }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Autor -->
+          <ng-container matColumnDef="autor">
+            <mat-header-cell *matHeaderCellDef class="fila">Autor</mat-header-cell>
+            <mat-cell *matCellDef="let libro">{{ libro.autor }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Categoria -->
+          <ng-container matColumnDef="categoria">
+            <mat-header-cell *matHeaderCellDef class="fila">Rol</mat-header-cell>
+            <mat-cell *matCellDef="let libro">{{ libro.categoria }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna ISBN -->
+          <ng-container matColumnDef="isbn">
+            <mat-header-cell *matHeaderCellDef class="fila">ISBN</mat-header-cell>
+            <mat-cell *matCellDef="let libro">{{ libro.isbn }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Estado -->
+          <ng-container matColumnDef="estado">
+            <mat-header-cell *matHeaderCellDef class="fila">Estado</mat-header-cell>
+            <mat-cell *matCellDef="let libro">{{ libro.estado }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Acciones -->
+          <ng-container matColumnDef="ACCIONES">
+            <mat-header-cell *matHeaderCellDef class="fila">Acciones</mat-header-cell>
+            <mat-cell *matCellDef="let libro">
+              <button mat-icon-button aria-label="Editar" class="btn-editar" (click)="abrirFormularioActualizar(libro)"
+                matTooltip="Editar" matTooltipPosition="above">
+                <mat-icon class="icono-editar">edit</mat-icon>
+              </button>
+              <button mat-icon-button aria-label="Eliminar" class="btn-eliminar" matTooltip="Eliminar"
+                matTooltipPosition="above" (click)="eliminarLibro(libro.idLibro)">
+                <mat-icon class="icono-eliminar">delete_forever</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+
+          <!-- Renderizado de filas -->
+          <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
+        </mat-table>
+      </div>
+    </div>
+
+    <div class="contenedor-btnsalir">
+      <button matFab class="btnsalir" (click)="cerrarSesion()" >
+        <mat-icon class="icono-salir">exit_to_app</mat-icon>
+      </button>
+    </div>
+
+  </section>
+</main>

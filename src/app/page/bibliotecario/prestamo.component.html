@@ -1,0 +1,101 @@
+<main>
+  <section>
+    <div class="contenedor-imgangular">
+      <div class="img-angular">
+        <img src="angular_bibliotecario.png" width="200" height="200" alt="Imagen Angular" class="logo">
+      </div>
+    </div>
+
+    <div class="contenedor-tabla">
+
+      <div class="contenedor-busqueda-btnuevo">
+
+        <div class="contenedor-busqueda">
+
+          <mat-form-field class="campos-busqueda-width">
+            <mat-label>Buscar</mat-label>
+            <input matInput [(ngModel)]="nombreBuscado" placeholder="Ingrese para Buscar" type="text" />
+            <button mat-icon-button matSuffix  aria-label="Buscar" >
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div class="contenedor-btnuevo">
+          <button matFab extended (click)="abrirFormularioRegistro()">
+            Nuevo
+            <mat-icon>add_circle</mat-icon>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="tabla-inventario">
+        <mat-table [dataSource]="datos" class="tabla-inv">
+
+          <!-- Columna ID -->
+          <ng-container matColumnDef="idPrestamo">
+            <mat-header-cell *matHeaderCellDef class="fila">ID</mat-header-cell>
+            <mat-cell *matCellDef="let prestamo">{{ prestamo.idPrestamo }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Nombre -->
+          <ng-container matColumnDef="nombre">
+            <mat-header-cell *matHeaderCellDef class="fila">Nombre</mat-header-cell>
+            <mat-cell *matCellDef="let prestamo">{{ prestamo.nombre }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Cedula -->
+          <ng-container matColumnDef="cedula">
+            <mat-header-cell *matHeaderCellDef class="fila">Cedula</mat-header-cell>
+            <mat-cell *matCellDef="let prestamo">{{ prestamo.cedula }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Libro -->
+          <ng-container matColumnDef="libro">
+            <mat-header-cell *matHeaderCellDef class="fila">Libro</mat-header-cell>
+            <mat-cell *matCellDef="let prestamo">{{ prestamo.libro }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Fecha Salida -->
+          <ng-container matColumnDef="fechasalida">
+            <mat-header-cell *matHeaderCellDef class="fila">Fecha Salida</mat-header-cell>
+            <mat-cell *matCellDef="let prestamo">{{ prestamo.fechaSalida }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Fecha Entrada -->
+          <ng-container matColumnDef="fechaentrada">
+            <mat-header-cell *matHeaderCellDef class="fila">Fecha Entrada</mat-header-cell>
+            <mat-cell *matCellDef="let prestamo">{{ prestamo.fechaEntrada }}</mat-cell>
+          </ng-container>
+
+          <!-- Columna Acciones -->
+          <ng-container matColumnDef="ACCIONES">
+            <mat-header-cell *matHeaderCellDef class="fila">Acciones</mat-header-cell>
+            <mat-cell *matCellDef="let prestamo">
+              <button mat-icon-button aria-label="Editar" class="btn-editar" (click)="abrirFormularioActualizar(prestamo)"
+                      matTooltip="Editar" matTooltipPosition="above">
+                <mat-icon class="icono-editar">edit</mat-icon>
+              </button>
+              <button mat-icon-button aria-label="Eliminar" class="btn-eliminar" matTooltip="Eliminar"
+                      matTooltipPosition="above" (click)="eliminarPrestamo(prestamo)">
+                <mat-icon class="icono-eliminar">delete_forever</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+
+          <!-- Renderizado de filas -->
+          <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
+        </mat-table>
+      </div>
+    </div>
+
+    <div class="contenedor-btnsalir">
+      <button matFab class="btnsalir" (click)="cerrarSesion()">
+        <mat-icon class="icono-salir">exit_to_app</mat-icon>
+      </button>
+    </div>
+
+  </section>
+</main>

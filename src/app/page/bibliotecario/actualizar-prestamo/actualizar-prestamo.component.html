@@ -1,0 +1,59 @@
+<main>
+  <section>
+    <div class="contenedor-actualizar">
+      <div class="titulo">
+        <h1>Actualizar Prestamo</h1>
+      </div>
+      <br>
+      <div class="formulario-registro">
+        <mat-form-field class="campos-registro-width">
+          <mat-label>Nombre Cliente</mat-label>
+          <input matInput [(ngModel)]="nombre" placeholder="Ingrese Cliente" type="text" name="nombre" />
+          <mat-icon matSuffix fontIcon="person"></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="campos-registro-width">
+          <mat-label>Cedula Cliente</mat-label>
+          <input matInput [(ngModel)]="cedula" placeholder="Ingrese Cedula" type="text" name="cedula" />
+          <mat-icon matSuffix fontIcon="password"></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="campos-registro-width">
+          <mat-label>Libros Disponibles</mat-label>
+          <mat-select [(ngModel)]="libroSeleccionado" name="libro">
+            @for (libro of librosDisponibles; track libro.idLibro) {
+            <mat-option [value]="libro.idLibro">
+              {{ libro.titulo }}
+            </mat-option>}
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="campos-registro-width">
+          <mat-label>Fecha Salida</mat-label>
+          <input matInput [(ngModel)]="fechaSalida" [matDatepicker]="pickerSalida">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="pickerSalida"></mat-datepicker-toggle>
+          <mat-datepicker #pickerSalida></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="campos-registro-width">
+          <mat-label>Fecha Entrada</mat-label>
+          <input matInput [(ngModel)]="fechaEntrada" [matDatepicker]="pickerEntrada">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="pickerEntrada"></mat-datepicker-toggle>
+          <mat-datepicker #pickerEntrada></mat-datepicker>
+        </mat-form-field>
+
+        <br>
+        <br>
+
+        <div class="contenedor-btregistro">
+          <button mat-flat-button (click)="actualizarPrestamo()">
+            Actualizar
+            <mat-icon>app_registration</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

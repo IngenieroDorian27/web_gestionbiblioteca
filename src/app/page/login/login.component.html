@@ -1,0 +1,39 @@
+
+<main>
+  <section class="section">
+    <div class="contenedor-logo">
+      <div class="logo-app">
+        <img src="angular_material.png" width="200" height="200" alt="Logo de LibroTrack" class="logo">
+      </div>
+      <br>
+      <div class="letra-logo">
+        <h1>Powered by Angular</h1>
+        <br>
+        <h1>Fast, Modern & Reliable</h1>
+      </div>
+    </div>
+
+    <div class="contenedor-login">
+      <div class="cabecera-login">
+        <h1>Sign In</h1>
+      </div>
+      <div class="campos-login">
+        <mat-form-field class="campos-login-width">
+          <mat-label>Usuario</mat-label>
+          <input matInput [(ngModel)]="usuario" placeholder="Ingrese su Usuario" type="text" />
+          <mat-icon matSuffix fontIcon="account_box"></mat-icon>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="campos-login-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [(ngModel)]="contrasena" placeholder="Ingrese su contraseña" type="password" />
+          <mat-icon matSuffix fontIcon="password"></mat-icon>
+        </mat-form-field>
+      </div>
+      <br>
+      <div class="ingresar-login">
+        <button mat-flat-button (click)="iniciarSesion()" >Sign In</button>
+      </div>
+    </div>
+  </section>
+</main>

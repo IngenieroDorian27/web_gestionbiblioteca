@@ -1,0 +1,26 @@
+.campos-registro-width {
+  width: 80%;
+}
+
+.contenedor-registro {
+  background: #fff0d4;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 50px;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+}
+
+.titulo{
+  color: #bc5090;
+}
+
+.contenedor-btregistro button {
+  transition: transform 0.3s ease;
+  width: 70%;
+}
+
+.contenedor-btregistro button:hover {
+  transform: scale(1.5);
+}

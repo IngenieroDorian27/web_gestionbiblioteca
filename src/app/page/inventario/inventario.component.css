@@ -1,0 +1,98 @@
+.contenedor-imgangular {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.tabla-inventario {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center !important;
+  justify-content: center;
+}
+
+.contenedor-tabla {
+  max-width: 1000px; /* Mismo ancho que tu tabla */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contenedor-busqueda-btnuevo {
+  display: flex;
+  justify-content: flex-end; /* Botón a la derecha */
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.contenedor-busqueda {
+  display: flex;
+  justify-content: flex-start; /* Botón a la derecha */
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.tabla-inv .mat-mdc-cell,
+.tabla-inv .mat-mdc-header-cell,
+.tabla-inv .mat-cell,
+.tabla-inv .mat-header-cell {
+  text-align: center !important;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.tabla-inv .mat-mdc-cell:last-child,
+.tabla-inv .mat-cell:last-child {
+  gap: 8px;
+}
+
+.btn-eliminar {
+  color: #bc5090;
+}
+
+.btn-editar {
+  color: #2c4875;
+}
+
+.fila{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.contenedor-btnuevo button {
+  transition: transform 0.3s ease;
+}
+
+.contenedor-btnuevo button:hover {
+  transform: scale(1.5);
+}
+
+.contenedor-btnsalir {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+  margin-top: -70px;
+
+}
+
+.btnsalir {
+  color: #00202e;
+  align-items: center;
+}
+
+.contenedor-btnsalir button {
+  transition: transform 0.3s ease;
+}
+
+.contenedor-btnsalir button:hover {
+  transform: scale(1.5);
+}
+
+::ng-deep .mat-tooltip {
+  font-size: 12px;
+  background-color: #333;
+}

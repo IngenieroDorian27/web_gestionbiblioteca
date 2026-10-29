@@ -1,0 +1,41 @@
+<main>
+  <section>
+    <div class="contenedor-actualizar">
+      <div class="titulo">
+        <h1>Actualizar Usuario</h1>
+      </div>
+      <br>
+      <div class="formulario-actualizar">
+        <mat-form-field class="campos-actualizar-width">
+          <mat-label>Usuario Actualizado</mat-label>
+          <input matInput [(ngModel)]="usuario" placeholder="Ingrese Nuevo Usuario" type="text" name="usuario"/>
+          <mat-icon matSuffix fontIcon="person"></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="campos-actualizar-width">
+          <mat-label>Contraseña Actualizada</mat-label>
+          <input matInput [(ngModel)]="contrasena" placeholder="Ingrese Nueva Contraseña" type="text" name="contrasena"/>
+          <mat-icon matSuffix fontIcon="password"></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="campos-actualizar-width">
+          <mat-label>Seleccionar Rol Usuario</mat-label>
+          <mat-select [(ngModel)]="rol">
+            <mat-option value="bibliotecario">Bibliotecario</mat-option>
+            <mat-option value="administrador">Administrador</mat-option>
+            <mat-option value="inventario">Inventario</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <br>
+
+        <div class="contenedor-btnactualizar">
+          <button mat-flat-button color="primary" (click)="actualizarUsuario()" class="btn-actualizar">
+            Actualizar
+            <mat-icon>update</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
